@@ -23,3 +23,10 @@ Aprimorando os conhecimento em java web e jsp
  - Dentro da pasta src/main/webapp.
  - Clique com o botão direito.
  - E crie um JSP.file
+
+ # Rodando o projeto
+ - Para rodar o projeto ele precisa ser adicionado ao server.
+ - Clique com o botão direito no server (TOMCAT).
+ - Selecione a opção ADD and REMOVE.
+ - Adicione o projeto e depois vá em finish.
+ - Depois você pode startar servidor.
