@@ -14,7 +14,7 @@ Aprimorando os conhecimento em java web e jsp
  - Role até a opção configure
     - Escolha a opção converter to maven project.
 
-#Arrumando aba do eclipse
+# Arrumando aba do eclipse
 - Mostre a aba package explore
 - Para fazer isso, vá até configuração Window > show view
 - Depois escreva explorer package
