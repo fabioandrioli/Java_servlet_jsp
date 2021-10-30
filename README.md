@@ -30,3 +30,5 @@ Aprimorando os conhecimento em java web e jsp
  - Selecione a opção ADD and REMOVE.
  - Adicione o projeto e depois vá em finish.
  - Depois você pode startar servidor.
+ - Vá até a guia console, e veja em qual porta o servidor está
+ - Geralmente no porta 8080.
