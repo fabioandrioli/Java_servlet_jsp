@@ -17,4 +17,9 @@ Aprimorando os conhecimento em java web e jsp
 # Arrumando aba do eclipse
 - Mostre a aba package explore
 - Para fazer isso, vá até configuração Window > show view
-- Depois escreva explorer package
+- Depois escreva explorer package.
+
+# Criando o primeiro arquivo JSP
+ - Dentro da pasta src/main/webapp.
+ - Clique com o botão direito.
+ - E crie um JSP.file
