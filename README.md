@@ -32,3 +32,4 @@ Aprimorando os conhecimento em java web e jsp
  - Depois você pode startar servidor.
  - Vá até a guia console, e veja em qual porta o servidor está
  - Geralmente no porta 8080.
+ - Então acesso o servidor localhost:8080/nomedoprojeto
