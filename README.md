@@ -33,3 +33,8 @@ Aprimorando os conhecimento em java web e jsp
  - Vá até a guia console, e veja em qual porta o servidor está
  - Geralmente no porta 8080.
  - Então acesso o servidor localhost:8080/nomedoprojeto
+
+ # criação da SERVLETE
+  - Clique com o botão direito em cima do src/main/java
+  - Depois clique com o botão direito em new -> others -> escreva package.
+  - Com o botão direito new -> others -> servlet
