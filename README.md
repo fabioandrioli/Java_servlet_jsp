@@ -37,4 +37,6 @@ Aprimorando os conhecimento em java web e jsp
  # criação da SERVLETE
   - Clique com o botão direito em cima do src/main/java
   - Depois clique com o botão direito em new -> others -> escreva package.
-  - Com o botão direito new -> others -> servlet
+  - Com o botão direito new -> others -> servlet.
+  - Dependendo da sua versão do tom cat, a servlet vai importa ou do javax ou do jakart.
+  - o Atalho no eclipse para arrumar os imports corretamente é shifit + ctr + o
