@@ -46,8 +46,8 @@ public class FilterAuthentication implements Filter {
 			return;
 		}else {
 			chain.doFilter(request, response);
-			RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp");
-			redirect.forward(request, response);
+			//RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp");
+			//redirect.forward(request, response);
 		}
 		
 		

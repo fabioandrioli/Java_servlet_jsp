@@ -15,8 +15,12 @@ import model.LoginModel;
 /*
  * Os chamados controllers são as servlets
  * É commum encontrar as nomeclatura as servlets assim: LoginServletController
+ * 
  * */
-@WebServlet("/LoginServlet")
+
+//para mapear mais alguma rota basta adicionar mais uma string separa pro virgula
+//@WebServlet(urlPatterns = {"/LoginServlet","login/LoginServlet"}) 
+@WebServlet(urlPatterns = {"/views/user/LoginServlet","/LoginServlet"}) 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -47,8 +51,11 @@ public class LoginServlet extends HttpServlet {
 				
 				//essa pode ser usado em qualquer lugar do sistema
 				request.getSession().setAttribute("username", loginModel.getUsername()); //cria sessão do usuário após login
+				
+				//nesse estado aqui ele ja passou pelo filter
 				RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp"); // escolhe o arquiv que vai redirecionar
 				redirect.forward(request, response);
+				
 			}else {
 				RequestDispatcher redirect = request.getRequestDispatcher("/views/auth/login.jsp");
 				request.setAttribute("message", "Login ou senha incorretos"); // mensaggem capiturada no jsp ${message}

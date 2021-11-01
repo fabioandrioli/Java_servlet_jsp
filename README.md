@@ -52,3 +52,15 @@ Aprimorando os conhecimento em java web e jsp
   - As clases dentro da pasta webapp são o frontend do sistema.
   - Ja as classes dentro src/main/java são o backend do sistema.
   - As servlets são o controle.
+
+  # Adicionando dependencias
+    - Caso você tenha convertido um projeto maven é comum que no arquivo pom.xml não apareça a tag <dependencies></dependencies>
+    - Neste caso você terá que acionar ela manualmente.
+    - depois dentro dela você adiciona a dependencia do mavem 
+    - <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
+    </dependencies>
