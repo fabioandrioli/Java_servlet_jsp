@@ -40,3 +40,8 @@ Aprimorando os conhecimento em java web e jsp
   - Com o botão direito new -> others -> servlet.
   - Dependendo da sua versão do tom cat, a servlet vai importa ou do javax ou do jakarta.
   - o Atalho no eclipse para arrumar os imports corretamente é shifit + ctr + o
+
+  # Como funciona
+  - As clases dentro da pasta webapp são o frontend do sistema.
+  - Ja as classes dentro src/main/java são o backend do sistema.
+  - As servlets são o controle.

@@ -10,8 +10,8 @@
 		<form action="LoginServlet" method="POST">
 			<fieldset>
 				<legend>Formulario</legend>
-				<input type="text" name="username" placeholder="Nome completo" />
-				<input type="number" name="password" placeholder="Idade" />
+				<input type="text" name="nome" placeholder="Nome completo" />
+				<input type="number" name="idade" placeholder="Idade" />
 				<button type="submit">Enviar</button>
 			</fieldset>
 		</form>
