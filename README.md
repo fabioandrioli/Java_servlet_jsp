@@ -45,6 +45,8 @@ Aprimorando os conhecimento em java web e jsp
   - Clique com o botão direito em cima do src/main/java
   - Depois clique com o botão direito em new -> others -> escreva package de o nome de filters para o package.
   - Com o botão direito new -> others -> filter.
+  - Dependendo da sua versão do tom cat, a servlet vai importa ou do javax ou do jakarta.
+  - o Atalho no eclipse para arrumar os imports corretamente é shifit + ctr + o
 
   # Como funciona
   - As clases dentro da pasta webapp são o frontend do sistema.
