@@ -44,8 +44,10 @@ public class LoginServlet extends HttpServlet {
 			loginModel.setUsername(username);
 			loginModel.setPassword(password);
 			if(loginModel.getUsername().equalsIgnoreCase("admin") && loginModel.getPassword().equalsIgnoreCase("admin")) {
+				
+				//essa pode ser usado em qualquer lugar do sistema
 				request.getSession().setAttribute("username", loginModel.getUsername()); //cria sessão do usuário após login
-				RequestDispatcher redirect = request.getRequestDispatcher("index.jsp"); // escolhe o arquiv que vai redirecionar
+				RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp"); // escolhe o arquiv que vai redirecionar
 				redirect.forward(request, response);
 			}else {
 				RequestDispatcher redirect = request.getRequestDispatcher("/views/auth/login.jsp");
