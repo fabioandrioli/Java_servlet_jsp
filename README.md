@@ -47,6 +47,10 @@ Aprimorando os conhecimento em java web e jsp
   - Com o botão direito new -> others -> filter.
   - Dependendo da sua versão do tom cat, a servlet vai importa ou do javax ou do jakarta.
   - o Atalho no eclipse para arrumar os imports corretamente é shifit + ctr + o
+  
+  # Banco, no filter é chamado a conexão com o banco
+  - Após criar a classe de conexão.
+  - Ela é instanciada na classe filter.
 
   # Como funciona
   - As clases dentro da pasta webapp são o frontend do sistema.
@@ -64,3 +68,4 @@ Aprimorando os conhecimento em java web e jsp
             <version>8.0.11</version>
         </dependency>
     </dependencies>
+
