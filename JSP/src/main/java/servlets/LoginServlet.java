@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DaoLoginRepository;
 import model.LoginModel;
 
 /*
@@ -20,10 +21,11 @@ import model.LoginModel;
 
 //para mapear mais alguma rota basta adicionar mais uma string separa pro virgula
 //@WebServlet(urlPatterns = {"/LoginServlet","login/LoginServlet"}) 
-@WebServlet(urlPatterns = {"/views/user/LoginServlet","/LoginServlet"}) 
+@WebServlet(urlPatterns = {"/views/auth/LoginServlet","/views/user/LoginServlet","/LoginServlet"}) 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+   
+	private DaoLoginRepository daoLoginRepository = new DaoLoginRepository();
    
     public LoginServlet() {
         super();
@@ -47,7 +49,8 @@ public class LoginServlet extends HttpServlet {
 			LoginModel loginModel = new LoginModel();
 			loginModel.setUsername(username);
 			loginModel.setPassword(password);
-			if(loginModel.getUsername().equalsIgnoreCase("admin") && loginModel.getPassword().equalsIgnoreCase("admin")) {
+			//if(loginModel.getUsername().equalsIgnoreCase("admin") && loginModel.getPassword().equalsIgnoreCase("admin")) {
+			if(daoLoginRepository.validarAutenticacao(loginModel)) {
 				
 				//essa pode ser usado em qualquer lugar do sistema
 				request.getSession().setAttribute("username", loginModel.getUsername()); //cria sessão do usuário após login

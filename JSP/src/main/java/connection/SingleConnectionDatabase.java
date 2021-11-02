@@ -32,7 +32,7 @@ public class SingleConnectionDatabase {
     			CONNECTION.setAutoCommit(false);/*Para não efetuar alterações no banco sem nosso comando*/
     		}
     	}catch (Exception e) {
-			
+			e.printStackTrace();
 		}
     }
      

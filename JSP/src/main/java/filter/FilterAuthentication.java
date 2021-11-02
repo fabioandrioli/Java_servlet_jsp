@@ -1,6 +1,9 @@
 package filter;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -12,9 +15,13 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import connection.SingleConnectionDatabase;
+
 @WebFilter(urlPatterns = {"/views/user/*"})// Intercepta todas as requisições que vierem do mapeamento
 public class FilterAuthentication implements Filter {
 
+	private static Connection connection;
+	
     public FilterAuthentication() {
 
     }
@@ -22,6 +29,11 @@ public class FilterAuthentication implements Filter {
     /*Encerra os processos quando o servidor é parado*/
     // mataria a conexão com banco
 	public void destroy() {
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -31,23 +43,30 @@ public class FilterAuthentication implements Filter {
 	 * Validação de autenticação
 	 * */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-		HttpSession httpSession = httpServletRequest.getSession();
-		
-		String usuarioLogado = (String) httpSession.getAttribute("username");
-		
-		/*URL que está sendo acessada*/
-		String urlParaAutenticar = httpServletRequest.getServletPath();
-		
-		if((usuarioLogado == null || usuarioLogado.isEmpty()) && !urlParaAutenticar.contains("LoginServlet")) {
-			RequestDispatcher redirect = request.getRequestDispatcher("/views/auth/login.jsp");
-			redirect.forward(request, response);
-		
-			return;
-		}else {
-			chain.doFilter(request, response);
-			//RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp");
-			//redirect.forward(request, response);
+		try {
+			HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+			HttpSession httpSession = httpServletRequest.getSession();
+			
+			String usuarioLogado = (String) httpSession.getAttribute("username");
+			
+			/*URL que está sendo acessada*/
+			String urlParaAutenticar = httpServletRequest.getServletPath();
+			
+			if((usuarioLogado == null || usuarioLogado.isEmpty()) && !urlParaAutenticar.contains("LoginServlet")) {
+				RequestDispatcher redirect = request.getRequestDispatcher("/views/auth/login.jsp");
+				redirect.forward(request, response);
+			
+				return;
+			}else {
+				chain.doFilter(request, response);
+				//RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp");
+				//redirect.forward(request, response);
+			}
+			
+			connection.commit();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 		
 		
@@ -56,7 +75,7 @@ public class FilterAuthentication implements Filter {
 	/*Inicia os processos ou recursos*/
 	//exemplo iniciar a conexão com o banco
 	public void init(FilterConfig fConfig) throws ServletException {
-
+		connection = SingleConnectionDatabase.getConnection();
 	}
 
 }
