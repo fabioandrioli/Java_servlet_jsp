@@ -19,11 +19,11 @@ public class DaoLoginRepository {
 	}
 	
 	public boolean validarAutenticacao(LoginModel loginModel) {
-		final String sql = "select * from where email = ? and password = ?";
+		final String sql = "select * from login where upper(username) = upper(?) and senha = ?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(0,loginModel.getUsername());
-			preparedStatement.setString(1,loginModel.getPassword());
+			preparedStatement.setString(1,loginModel.getUsername());
+			preparedStatement.setString(2,loginModel.getPassword());
 			
 			ResultSet resultset = preparedStatement.executeQuery();
 			if(resultset.next()) {
