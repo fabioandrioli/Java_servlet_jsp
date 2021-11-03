@@ -42,6 +42,10 @@
 			        <input class="form-control me-2" type="search" placeholder="Procure seu filme" aria-label="Search">
 			        <button class="btn btn-outline-success" type="submit">Buscar</button>
 			      </form>
+			      <form class="d-flex" action="LoginServlet" method="POST">
+			      	<input type="hidden" name="sair" value="exit" >
+			        <button class="btn btn-outline-danger" type="submit">Sair</button>
+			      </form>
 			    </div>
 			  </div>
 			</nav>

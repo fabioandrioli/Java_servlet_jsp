@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DaoLoginRepository;
 import model.LoginModel;
@@ -35,6 +36,14 @@ public class LoginServlet extends HttpServlet {
 	/*Recebe os dados por parametros*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//chama do post caso a pagina seja apenas atualizada, assim evita o erro de cair no get e ficar
+		//tela em branco.
+		doPost(request, response);
+		//encerra sessao
+		//
+		//this.finshSession(request,response);
+		
+		
 	}
 
 	
@@ -42,8 +51,17 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 		
+		//realiza validacoes de login
+		this.login(request, response);
+		this.finshSession(request,response);
+		
+	}
+	
+	
+	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		
 		
 		if(username  != null && !username .isEmpty() && password!= null && !password.isEmpty()) {
 			LoginModel loginModel = new LoginModel();
@@ -73,6 +91,20 @@ public class LoginServlet extends HttpServlet {
 		
 		System.out.println(username);
 		System.out.println(password);
+	}
+	
+	private void finshSession(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String sair = request.getParameter("sair");
+		if(sair != null) {
+			
+			   HttpSession session = request.getSession();
+			   session.invalidate();
+			   RequestDispatcher redirect = request.getRequestDispatcher("/views/auth/login.jsp");
+			   redirect.forward(request, response);
+		}else {
+			RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp"); // escolhe o arquiv que vai redirecionar
+			redirect.forward(request, response);
+		}
 	}
 
 }
