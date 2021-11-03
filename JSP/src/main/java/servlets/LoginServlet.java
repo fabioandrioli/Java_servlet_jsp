@@ -49,7 +49,6 @@ public class LoginServlet extends HttpServlet {
 	
 	/*Recebe os dados por POST do formulario*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 		
 		//realiza validacoes de login
 		this.login(request, response);
