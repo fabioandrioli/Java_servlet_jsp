@@ -36,13 +36,21 @@ public class LoginServlet extends HttpServlet {
 	/*Recebe os dados por parametros*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		//chama do post caso a pagina seja apenas atualizada, assim evita o erro de cair no get e ficar
-		//tela em branco.
-		doPost(request, response);
-		//encerra sessao
-		//
-		//this.finshSession(request,response);
 		
+		//String acao = request.getParameter("acao");
+		/* if(acao != null && acao.equalsIgnoreCase("logout")) {
+			request.getSession().invalidate();
+			RequestDispatcher redirect = request.getRequestDispatcher("/views/auth/login.jsp");
+			request.setAttribute("message", "Login ou senha incorretos"); // mensaggem capiturada no jsp ${message}
+			
+		}else { */
+			//chama do post caso a pagina seja apenas atualizada, assim evita o erro de cair no get e ficar
+			//tela em branco.
+			doPost(request, response);
+			//encerra sessao
+			//
+			//this.finshSession(request,response);
+		//}
 		
 	}
 
