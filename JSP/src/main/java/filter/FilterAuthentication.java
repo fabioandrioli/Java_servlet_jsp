@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 
 import connection.SingleConnectionDatabase;
 
-@WebFilter(urlPatterns = {"/views/user/*"})// Intercepta todas as requisições que vierem do mapeamento
+@WebFilter(urlPatterns = {"/views/user/*","/views/dashboard/*"})// Intercepta todas as requisições que vierem do mapeamento
 public class FilterAuthentication implements Filter {
 
 	private static Connection connection;
