@@ -38,7 +38,7 @@
 		<main>
 			<div class="navbar">
 				<ul>
-					<a href="<%= request.getContextPath()%>/UserServlet">
+					<a href="<%= request.getContextPath()%>/views/user/index.jsp">
 						<li class="navbar-item"><i class="fas fa-users"></i> Usuário</li>
 					</a>
 					<a href="">

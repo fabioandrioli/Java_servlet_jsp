@@ -1,11 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
  <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags" %>
  
- <dashboard:DashboardTemplate title="Todos usuários">
+ <html>
+ <dashboard:DashboardTemplate title="Todos usuÃ¡rios">
  	<jsp:attribute name="content">
 		<div class="row-create">
-			<a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Novo</a>
+			<a class="btn btn-primary" href="${pageContext.request.contextPath}/views/user/register.jsp">
+				Novo <i class="fas fa-plus"></i> 
+			</a>
 		</div>
 		<div class="show-information table-responsive-sm">
 			<table class="table">
@@ -41,3 +44,4 @@
 		</div>
 	</jsp:attribute>
 </dashboard:DashboardTemplate>
+</html>
