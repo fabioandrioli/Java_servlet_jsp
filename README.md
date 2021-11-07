@@ -67,7 +67,7 @@ Aprimorando os conhecimento em java web e jsp
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.11</version>
         </dependency>
-    </dependencies>
+    - </dependencies>
 
     # TAG TEMPLATE
         - Para criar um template devemos criar uma pasta tags dentro da WEB-INF
