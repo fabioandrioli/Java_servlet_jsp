@@ -69,13 +69,14 @@ Aprimorando os conhecimento em java web e jsp
         </dependency>
     - </dependencies>
 
-    # TAG TEMPLATE
+
+  # TAG TEMPLATE
         - Para criar um template devemos criar uma pasta tags dentro da WEB-INF
         - Depois clicamos com o botão direito nesta pasta -> new -> others
         - pesquisa por tag jsp.
         - Devera ser criando um arquivo com extensão .tag
 
-    # Template com JSP
+  # Template com JSP
      - Crie um pasta tags dentro da pasta WEB-INF
      - Depois crie o arqueivo de template que deseja
      - Adicione essas duas linhas depois da linha com esse código <%@ tag language="java" pageEncoding="ISO-8859-1"%>
