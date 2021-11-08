@@ -112,3 +112,15 @@ Aprimorando os conhecimento em java web e jsp
                     </jsp:attribute name="content"> 
                 </dashboard:DashboardTemplate>
             - Dessa forma criamos templates em java web JSP
+
+# Para trabalhar com criptogria é simples
+- Precisamos instalar uma biblioteca.
+- Baixe a shiro core pelo maven.
+- Adicione a dependencia.
+- Pronto para usar é simples.
+- Bastar instanciar
+- escolher o tipo de criptografia
+- escolha a criptografia que deseja como primeiro parametro, a senha a ser criptografada.
+    - SimpleHash hash = new SimpleHash("md5",userModel.getPassword());
+- por mim use o hash.toHex para criptografar
+     - userModel.setPassword(hash.toHex());
