@@ -21,6 +21,7 @@
 			    </tr>
 			  </thead>
 			  <tbody>
+			  <% ArrayList<UserModel> listaUser = request.getParameter("listaAllUsers"); %>
 			    <tr>
 			      <th scope="row">1</th>
 			      <td>Mark</td>

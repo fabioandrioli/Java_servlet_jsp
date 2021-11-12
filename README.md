@@ -124,3 +124,18 @@ Aprimorando os conhecimento em java web e jsp
     - SimpleHash hash = new SimpleHash("md5",userModel.getPassword());
 - por mim use o hash.toHex para criptografar
      - userModel.setPassword(hash.toHex());
+
+# Para cuidar da dinâminca do conteúdo na tela
+ - Conteudos que vem do banco da dados.
+ - Usamos o JSTL para trabalha com conteúdo dinâmico.
+ - Pesquise por taglib JSTL.
+ - A declaração da JSTL para usar no site é assim
+    - <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    - Para que ele funcione corretamente devemos adicionar está dependencia
+    !-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.0</version>
+	    <scope>provided</scope>
+	</dependency>

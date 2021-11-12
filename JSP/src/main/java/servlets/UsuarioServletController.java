@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -50,13 +51,29 @@ public class UsuarioServletController extends HttpServlet {
 			userModel.setRole(request.getParameter("role"));
 			userModel.setCreated_at(date);
 			
+			request.setAttribute("useFormDados", userModel);
+			
 			SimpleHash hash = new SimpleHash("md5",userModel.getPassword());
 			userModel.setPassword(hash.toHex());
 			
 			DaoUserRepository daoUserRepository = new DaoUserRepository();
+			
+			
+			
+			
+			
 			if(daoUserRepository.save(userModel)) {
+				ArrayList<UserModel> listaAllUsers = daoUserRepository.allUsers();
+				for (UserModel userModel2 : listaAllUsers) {
+					System.out.println(userModel2.getName());
+				}
+				//request.setAttribute("listaAllUsers",listaAllUsers);
 				response.sendRedirect("views/user/index.jsp");
-				//RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp"); // escolhe o arquiv que vai redirecionar
+				 //request.getRequestDispatcher("/views/user/index.jsp").forward(request, response);
+
+				//request.setAttribute("listaAllUsers",listaAllUsers);
+				//RequestDispatcher redirect = request.getRequestDispatcher("/views/user/index.jsp");
+				// escolhe o arquiv que vai redirecionar
 				//redirect.forward(request, response);
 			}else {
 				RequestDispatcher redirect = request.getRequestDispatcher("/views/user/register.jsp");
