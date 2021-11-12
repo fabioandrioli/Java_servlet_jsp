@@ -130,6 +130,7 @@ Aprimorando os conhecimento em java web e jsp
  - Usamos o JSTL para trabalha com conteúdo dinâmico.
  - Pesquise por taglib JSTL.
  - A declaração da JSTL para usar no site é assim
+    - https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm
     - <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     - Para que ele funcione corretamente devemos adicionar está dependencia
     !-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
