@@ -131,11 +131,25 @@ Aprimorando os conhecimento em java web e jsp
  - Pesquise por taglib JSTL.
  - A declaração da JSTL para usar no site é assim
     - https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm
-    - <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-    - Para que ele funcione corretamente devemos adicionar está dependencia
+    - Adicione esta tag onde deseja usar o JSTL no começo do arquivo,no caso deste projeto foi adicionado no template <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    - Para que ele funcione corretamente devemos adicionar estas dependencias
     !-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
 	<dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>jsp-api</artifactId>
 	    <version>2.0</version>
+	</dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+	<dependency>
+	    <groupId>jakarta.servlet.jsp.jstl</groupId>
+	    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+	    <version>1.2.5</version>
 	</dependency>
