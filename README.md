@@ -138,5 +138,4 @@ Aprimorando os conhecimento em java web e jsp
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>jsp-api</artifactId>
 	    <version>2.0</version>
-	    <scope>provided</scope>
 	</dependency>
